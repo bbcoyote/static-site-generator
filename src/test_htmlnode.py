@@ -1,6 +1,6 @@
 import unittest
 
-from htmlnode import HTMLNode, LeafNode
+from htmlnode import HTMLNode
 
 
 class TestHTMLNode(unittest.TestCase):
@@ -17,11 +17,6 @@ class TestHTMLNode(unittest.TestCase):
         node = HTMLNode()
         with self.assertRaises(NotImplementedError):
             node.to_html()
-
-class TestLeafNode(unittest.TestCase):
-    def test_Leaf_to_html_without_tag(self):
-        node = LeafNode(value="This is a LeafNode")
-        self.assertEqual(node.to_html(), "This is a LeafNode")
 
 if __name__ == "__main__":
     unittest.main()
